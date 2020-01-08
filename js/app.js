@@ -56,7 +56,9 @@ $(() => {
   console.log('added event listener');
   $('select').on('change', function() {
     console.log('CLICK!');
-    if (this.value !== 'default') {
+    if (this.value === 'all') {
+      $('section').show();
+    } else if (this.value !== 'default') {
       $('section').hide();
       // let key = event.target.value;
       $(`section[class="${this.value}"]`).show();
