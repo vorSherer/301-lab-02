@@ -16,9 +16,9 @@ Estimate of time needed to complete: 60 min.
 
 Start time: 1808
 
-Finish time: _____
+Finish time: 1945
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1hr 37min
 
 Number and name of feature: ________________________________
 
