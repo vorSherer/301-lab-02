@@ -12,6 +12,7 @@ function Image (image) {
 }
 
 Image.allImages = [];
+let keywords = [];
 
 Image.prototype.render = function() {
 //   let template = $('#photo-template').html();
@@ -23,7 +24,7 @@ Image.prototype.render = function() {
   imageClone.find('img').attr('src', this.url);
   imageClone.find('p').text(this.description);
   imageClone.removeClass('clone');
-  imageClone.attr('class', this.title);
+  imageClone.attr('class', this.keyword);
 };
 
 Image.readJson = () => {
@@ -31,13 +32,35 @@ Image.readJson = () => {
     .then(data => {
       data.forEach(item => {
         Image.allImages.push(new Image(item));
+        if (!keywords.includes(item.keyword)) {
+          keywords.push(item.keyword);
+        }
       });
     })
-    .then(Image.loadImages);
+    .then(Image.loadImages)
+    .then(Image.appendKeywords);
 };
 
 Image.loadImages = () => {
   Image.allImages.forEach(image => image.render());
 };
+
+Image.appendKeywords = () => {
+  keywords.forEach(key => {
+    let $option = $(`<option class="${key}">${key}</option>`);
+    $('select').append($option);
+  });
+};
+
+$(() => {
+  console.log('added event listener');
+  $('select').on('change', function() {
+    console.log('CLICK!');
+    $('section').hide();
+    // let key = event.target.value;
+    $(`section[class="${this.value}"]`).show();
+    console.log('end of event listener');
+  });
+});
 
 $(() => Image.readJson());
