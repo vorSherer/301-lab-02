@@ -56,10 +56,14 @@ $(() => {
   console.log('added event listener');
   $('select').on('change', function() {
     console.log('CLICK!');
-    $('section').hide();
-    // let key = event.target.value;
-    $(`section[class="${this.value}"]`).show();
-    console.log('end of event listener');
+    if (this.value === 'all') {
+      $('section').show();
+    } else if (this.value !== 'default') {
+      $('section').hide();
+      // let key = event.target.value;
+      $(`section[class="${this.value}"]`).show();
+      console.log('end of event listener');
+    }
   });
 });
 
