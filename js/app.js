@@ -1,18 +1,14 @@
 'use strict';
 
-// Data from the JSON file
-
-let $imageLink = $.get('../data/page-1.json');
-console.table($imageLink);
 
 // Constructor function for images from the JSON file
 
-function Image (url, title, description, keyword, horns){
-  this.url = url;
-  this.title = title;
-  this.description = description;
-  this.keyword = keyword;
-  this.horns = horns;
+function Image (image) {
+  this.url = image.image_url;
+  this.title = image.title;
+  this.description = image.description;
+  this.keyword = image.keyword;
+  this.horns = image.horns;
 }
 
 Image.allImages = [];
@@ -30,3 +26,18 @@ Image.prototype.render = function() {
   imageClone.attr('class', this.title);
 };
 
+Image.readJson = () => {
+  $.get('../data/page-1.json', 'json')
+    .then(data => {
+      data.forEach(item => {
+        Image.allImages.push(new Image(item));
+      });
+    })
+    .then(Image.loadImages);
+};
+
+Image.loadImages = () => {
+  Image.allImages.forEach(image => image.render());
+};
+
+$(() => Image.readJson());
