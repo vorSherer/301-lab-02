@@ -20,11 +20,11 @@ Finish time: 1945
 
 Actual time needed to complete: 1hr 37min
 
-Number and name of feature: ________________________________
+Number and name of feature: Filter Images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 45 min
 
-Start time: _____
+Start time: 2000
 
 Finish time: _____
 
