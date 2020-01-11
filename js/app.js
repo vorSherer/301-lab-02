@@ -58,6 +58,7 @@ $(() => {
     console.log('CLICK!');
     if (this.value === 'all') {
       $('section').show();
+      $('#photo-template').hide();
     } else if (this.value !== 'default') {
       $('section').hide();
       // let key = event.target.value;
@@ -68,3 +69,4 @@ $(() => {
 });
 
 $(() => Image.readJson());
+$('#photo-template').hide();
