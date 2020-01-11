@@ -28,7 +28,7 @@ Image.prototype.render = function() {
 };
 
 Image.readJson = () => {
-  $.get('data/page-1.json', 'json')
+  $.get('./data/page-1.json', 'json')
     .then(data => {
       data.forEach(item => {
         Image.allImages.push(new Image(item));
