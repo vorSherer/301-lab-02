@@ -1,25 +1,14 @@
-# Lab 02 - jQuery Selectors and Events
+# Lab 03 - Flexbox and Templating
 **Purpose:** 
 
 **Author/Team:** 
-Clayton Jones  
+(previously Clayton Jones)
 Thomas Sherer
 
 **Last Updated:** DATE
 **Deployed Site:** [Link]()
 
 ### Time Estimate
-
-
-Number and name of feature: **Display Images**
-
-Estimate of time needed to complete: 60 min.
-
-Start time: 1808
-
-Finish time: 1945
-
-Actual time needed to complete: 1hr 37min
 
 
 Number and name of feature: **Filter Images**
